@@ -3,7 +3,7 @@ export default function DoesNotExist({ blok }) {
     return (
       <div className="bg-red-50 border-red-600 border-dashed border-2 p-4 rounded-md">
         <p className="text-red-600">
-          The component <strong>{blok.component}</strong> not exist.
+          The component <strong>{blok.component}</strong> does not exist.
           <br />
           <br />
           <strong>

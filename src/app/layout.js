@@ -2,7 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StoryBlokProvider from "@/components/StoryBlokProvider";
 import { fetchConfig } from "@/lib/storyblok";
-import { Config } from "@/components/sb/Config";
+import Header from "@/components/sb/Header";
+import Footer from "@/components/sb/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +29,15 @@ export default async function RootLayout({ children }) {
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          {configStory && <Config blok={configStory.content} />}
+          {configStory?.content?.header && (
+            <Header blok={configStory.content.header[0]} />
+          )}
 
-          {children}
+          <main className="">{children}</main>
+
+          {configStory?.content?.footer && (
+            <Footer blok={configStory.content.footer[0]} />
+          )}
         </body>
       </html>
     </StoryBlokProvider>

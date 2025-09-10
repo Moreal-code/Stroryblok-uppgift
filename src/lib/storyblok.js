@@ -8,6 +8,13 @@ import DoesNotExist from "@/components/sb/DoesNotExist";
 import Hero from "@/components/sb/Hero";
 import ProductList from "@/components/sb/ProductList";
 import { Config } from "@/components/sb/Config";
+import TextWithButtons from "@/components/sb/TextWithButtons";
+import TitleWithButton from "@/components/sb/TitleWithButton";
+import ImageBanner from "@/components/sb/ImageBanner";
+import TripleImg from "@/components/sb/TripleImg";
+import AboutUs from "@/components/sb/AboutUs";
+
+import TitleWithText from "@/components/sb/TitleWithText";
 export const components = {
   // Add your components here
   page: Page,
@@ -18,6 +25,12 @@ export const components = {
   doesNotExist: DoesNotExist,
   ProductList: ProductList,
   Config: Config,
+  TextWithButtons: TextWithButtons,
+  TitleWithButton: TitleWithButton,
+  ImageBanner: ImageBanner,
+  TripleImg: TripleImg,
+  AboutUs: AboutUs,
+  TitleWithText: TitleWithText,
 };
 
 /**

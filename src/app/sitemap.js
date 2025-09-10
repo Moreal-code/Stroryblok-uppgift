@@ -12,7 +12,7 @@ export default async function sitemap() {
     const pages = (await StoryBlokUtils.getStaticPaths()).filter(
       (path) => path?.slug?.[0] !== "config"
     );
-
+    console.log("Sitemap pages fetched from Storyblok:", pages);
     const sitemap = pages.map((page) => {
       const slug = page?.slug.filter((item) => item !== "");
       const finalSlug = slug?.length > 0 ? slug.join("/") : "";

@@ -14,15 +14,14 @@ export default async function sitemap() {
     );
     console.log("Sitemap pages fetched from Storyblok:", pages);
     const sitemap = pages.map((page) => {
-      const slug = page?.slug.filter((item) => item !== "");
-      const finalSlug = slug?.length > 0 ? slug.join("/") : "";
+      const slugArray = Array.isArray(page.slug) ? page.slug : [page.slug];
+      const finalSlug = slugArray.filter((item) => item !== "").join("/");
       return {
         url: `${SETTINGS.SITE_URL}/${finalSlug}`,
         lastModified: new Date(),
         priority: 1,
       };
     });
-
     return sitemap;
   } catch (error) {
     console.error("Sitemap error:", error);
